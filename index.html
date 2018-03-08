@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ApiTesting</title>
+</head>
+<body>
+
+<button id="search">Go!</button>
+
+<ol>
+<div id="data">
+
+
+
+</div>
+</ol>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+
+    $("#search").click(function() {
+
+
+        var url = 'https://api.opendota.com/api/proPlayers';
+
+        $.getJSON(url, function (result){
+
+            console.log(result);
+            for(i=0; i<100;i++){
+                $('#data').append('<li>Name: '+result[i].name+ ", Avatar: <img src='"+result[i].avatarmedium+"'></li>");
+            }
+
+
+
+        });
+
+    });
+
+
+</script>
+
+<!-- Iz91QON1VkzAUF7bHuPiAiXhAHIsdBdwYwg6ADwa -->
+
+<!--https://api.nal.usda.gov/ndb/search/?format=json&q=butter&sort=n&max=25&offset=0&api_key=DEMO_KEY  -->
+
+</body>
+</html>
